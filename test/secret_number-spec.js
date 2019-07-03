@@ -9,15 +9,19 @@ describe('Secret Number', function() {
 
   beforeEach(function() {
     secretNumber = secretNumberGenerator();
+    // console.log(secretNumber())
   });
 
   it('should return a random number between 0 and 1000000(inclusive)', function() {
+    // console.log(secretNumber())
     var generatedNumber = secretNumber();
     generatedNumber.should.be.above(-1);
     generatedNumber.should.be.below(1000001);
   });
 
   it('should return a different random number by different generators', function() {
+    console.log(secretNumberGenerator())
+    console.log(secretNumberGenerator()())
     var generatedNumber1 = secretNumberGenerator()();
     var generatedNumber2 = secretNumberGenerator()();
     var generatedNumber3 = secretNumberGenerator()();
